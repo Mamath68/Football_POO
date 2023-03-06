@@ -3,11 +3,12 @@
 class Equipe
 {
 
-    private $nom;
+    private $name;
     private $dateCreation;
-    private $joueurs;
+    private Pays $contry;
 
-    public function __construct($nom, $dateCreation, $joueurs){
+    public function __construct($name, $dateCreation, $contry)
+    {
 
     }
 }
