@@ -16,27 +16,18 @@
         include $class_name . '.php';
     });
 
-    $e1 = new Equipe("SC Freiburg", 1904, $c2);
-    $e2 = new Equipe("Racing Club de Strasbourg", 1906, $c1);
-    $e3 = new Equipe("FC Basel", 1893, $c4);
-    $e4 = new Equipe("Arsenal FC", 1897, $c3);
-    var_dump($e1);
+    $e1 = new Equipe("SC Freiburg", 1904, "Allemagne", $p1);
+    $e2 = new Equipe("Racing Club de Strasbourg", 1906, "France", $p2);
+    $e3 = new Equipe("FC Basel", 1893, "Suisse", $p3);
+    $e4 = new Equipe("Arsenal FC", 1897, "Engleterre", $p4);
 
-    $p1 = new Joueur("Lucas", "Höler", "10-07-1994", $c2, $e1);
-    $p2 = new Joueur("Robin", "Risser", "02-12-2004", $c1, $e2);
-    $p3 = new Joueur("Michael", "Lang", "08-02-1991", $c4, $e3);
-    $p4 = new Joueur("Ainsley", "Maitland-Niles", "29-08-1997", $c3, $e4);
-    // var_dump($p1);
+    $p1 = new Joueur("Lucas", "Höler", "10-07-1994", "Allemand", $e1);
+    $p2 = new Joueur("Robin", "Risser", "02-12-2004", "Français", $e2);
+    $p3 = new Joueur("Michael", "Lang", "08-02-1991", "Englais", $e3);
+    $p4 = new Joueur("Ainsley", "Maitland-Niles", "29-08-1997", "Suisse", $e4);
 
-    $c1 = new Pays('France');
-    $c2 = new Pays('Allemagne');
-    $c3 = new Pays('Engleterre');
-    $c4 = new Pays('Suisse');
-    // var_dump($c1);
 
-    ?>
-
-    <?php
+    echo $p1;
 
     ?>
 </body>

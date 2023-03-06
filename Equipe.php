@@ -5,14 +5,17 @@ class Equipe
 
     private $name;
     private $dateCreation;
-    private Pays $country;
+    private $country;
+    private Joueur $player;
+    private array $carriere;
 
-    public function __construct($name, $dateCreation, $country)
+    public function __construct($name, $dateCreation, $country, $player)
     {
         $this->name = $name;
         $this->dateCreation = $dateCreation;
         $this->country = $country;
-
+        $this->player = $player;
+        $this->carriere = [];
     }
 
     public function getName()
@@ -39,7 +42,12 @@ class Equipe
     }
     public function setCountry($country)
     {
-        $this->contry = $country;
+        $this->country = $country;
+    }
+
+    public function setCarriere($carriere)
+    {
+        $this->carriere = $carriere;
     }
 
     public function __toString()

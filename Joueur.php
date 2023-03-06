@@ -6,15 +6,15 @@ class Joueur
     private $name;
     private $bDays;
     private $country;
-    private Equipe $team;
+    private array $carriere;
 
-    public function __construct($firstName, $name, $bDays, $country, $team)
+    public function __construct($firstName, $name, $bDays, $country)
     {
         $this->firstName = $firstName;
         $this->name = $name;
         $this->bDays = $bDays;
         $this->country = $country;
-        $this->team = $team;
+        $this->carriere = [];
     }
 
     public function getFirstName()
@@ -33,10 +33,6 @@ class Joueur
     {
         return $this->country;
     }
-    public function getTeam()
-    {
-        return $this->team;
-    }
 
     public function setFirstName($firstName)
     {
@@ -54,13 +50,9 @@ class Joueur
     {
         $this->country = $country;
     }
-    public function setTeam($team)
-    {
-        $this->team = $team;
-    }
 
     public function __toString()
     {
-        return "ok";
+        return $this->getFirstName() . " " . $this->getName() . " " . date_format($this->getBdays(), 'd-m-Y') . " " . $this->getCountry() . " " . $this->getTeam();
     }
 }
