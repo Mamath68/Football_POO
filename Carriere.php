@@ -41,8 +41,6 @@ class Carriere
         $this->dateRecrutement = $dateRecrutement;
     }
 
-
-
     public function __toString()
     {
         return "OK";

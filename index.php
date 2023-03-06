@@ -21,14 +21,15 @@
     $e3 = new Equipe("FC Basel", 1893, "Suisse", $p3);
     $e4 = new Equipe("Arsenal FC", 1897, "Engleterre", $p4);
 
-    $p1 = new Joueur("Lucas", "Höler", "10-07-1994", "Allemand", $e1);
-    $p2 = new Joueur("Robin", "Risser", "02-12-2004", "Français", $e2);
-    $p3 = new Joueur("Michael", "Lang", "08-02-1991", "Englais", $e3);
-    $p4 = new Joueur("Ainsley", "Maitland-Niles", "29-08-1997", "Suisse", $e4);
+    $p1 = new Joueur("Lucas", "Höler", "10-07-1994", "Allemand");
+    $p2 = new Joueur("Robin", "Risser", "02-12-2004", "Français");
+    $p3 = new Joueur("Michael", "Lang", "08-02-1991", "Englais");
+    $p4 = new Joueur("Ainsley", "Maitland-Niles", "29-08-1997", "Suisse");
 
-
-    echo $p1;
-
+    $c1 = new Carriere($p1, $e1, "01-01-2018");
+    $c2 = new Carriere($p2, $e2, "01-01-2021");
+    $c3 = new Carriere($p3, $e3, "19-07-2021");
+    $c4 = new Carriere($p4, $e4, "09-12-2014");
     ?>
 </body>
 

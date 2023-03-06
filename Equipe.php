@@ -50,8 +50,13 @@ class Equipe
         $this->carriere = $carriere;
     }
 
+    public function addCarriere($carriere)
+    {
+        $this->carriere[] = $carriere;
+    }
+
     public function __toString()
     {
-        return "OK";
+        return $this->getName() . " " . date_format($this->getDateCreation(), 'd-m-Y') . " " . $this->getCountry();
     }
 }

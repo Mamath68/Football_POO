@@ -51,8 +51,13 @@ class Joueur
         $this->country = $country;
     }
 
+    public function addPlayer($carriere)
+    {
+        $this->carriere[] = $carriere;
+    }
+
     public function __toString()
     {
-        return $this->getFirstName() . " " . $this->getName() . " " . date_format($this->getBdays(), 'd-m-Y') . " " . $this->getCountry() . " " . $this->getTeam();
+        return $this->getFirstName() . " " . $this->getName() . " " . date_format($this->getBdays(), 'd-m-Y') . " " . $this->getCountry();
     }
 }
