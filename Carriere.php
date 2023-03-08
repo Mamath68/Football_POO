@@ -10,9 +10,10 @@ class Carriere
     public function __construct($player, $team, $dateRecrutement)
     {
         $this->player = $player;
+        $player->addCarriere($this);
         $this->team = $team;
-        $this->dateRecrutement = $dateRecrutement;
-
+        $team->addCarriere($this);
+        $this->dateRecrutement = new DateTime($dateRecrutement);
     }
 
     public function getPlayer()
@@ -43,6 +44,6 @@ class Carriere
 
     public function __toString()
     {
-        return "OK";
+        return $this->getPlayer()." ".$this->getTeam()." " . $this->getDateRecrutement();
     }
 }

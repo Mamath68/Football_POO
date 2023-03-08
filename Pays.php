@@ -2,7 +2,7 @@
 
 class Pays
 {
-    private $name;
+    private string $name;
 
 
     public function __construct($name)
@@ -20,8 +20,8 @@ class Pays
         $this->name = $name;
     }
 
-    // public function __toString()
-    // {
-    //     return "ok ";
-    // }
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

@@ -4,17 +4,19 @@ class Joueur
 {
     private $firstName;
     private $name;
-    private $bDays;
-    private $country;
-    private array $carriere;
+    private DateTime $bDays;
+    private $nationality;
+    private array $carrieres;
+    private Pays $pays;
 
-    public function __construct($firstName, $name, $bDays, $country)
+    public function __construct($firstName, $name, $bDays, $nationality, $pays)
     {
         $this->firstName = $firstName;
         $this->name = $name;
-        $this->bDays = $bDays;
-        $this->country = $country;
-        $this->carriere = [];
+        $this->bDays = new DateTime($bDays);
+        $this->nationality = $nationality;
+        $this->pays = $pays;
+        $this->carrieres = [];
     }
 
     public function getFirstName()
@@ -29,9 +31,13 @@ class Joueur
     {
         return $this->bDays;
     }
-    public function getCountry()
+    public function getNationality()
     {
-        return $this->country;
+        return $this->nationality;
+    }
+    public function getPays()
+    {
+        return $this->pays;
     }
 
     public function setFirstName($firstName)
@@ -46,18 +52,37 @@ class Joueur
     {
         $this->bDays = $bDays;
     }
-    public function setCountry($country)
+    public function setNationality($nationality)
     {
-        $this->country = $country;
+        $this->nationality = $nationality;
+    }
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
     }
 
-    public function addPlayer($carriere)
+    public function addCarriere(Carriere $carriere)
     {
-        $this->carriere[] = $carriere;
+        echo "<p>" . $this->getFirstName() . " " . $this->getName() . " " . date_format($this->getBdays(), 'd-m-Y') . " " . $this->getNationality() . " " . $this->getPays() . "</p>";
     }
 
+    public function calculateAge()
+    {
+        // recuper datenaissance de la personne dans variable.
+        // diff entre les deux dates
+        //return format en année (Y)
+        $bday = $this->getBdays();
+        $now = new DateTime();
+        $diff = $now->diff($bday);
+
+        return $diff->y;
+    }
+    public function afficherPlayer()
+    {
+        echo "<h1>" . $this->getfirstName() . " " . $this->getname() . " " . $this->calculateAge() . " ans. </h1>";
+    }
     public function __toString()
     {
-        return $this->getFirstName() . " " . $this->getName() . " " . date_format($this->getBdays(), 'd-m-Y') . " " . $this->getCountry();
+        return $this->getFirstName() . " " . $this->getName() . " " . date_format($this->getBdays(), 'd-m-Y') . " " . $this->getNationality();
     }
 }

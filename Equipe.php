@@ -1,21 +1,18 @@
 <?php
-
 class Equipe
 {
 
     private $name;
-    private $dateCreation;
-    private $country;
-    private Joueur $player;
-    private array $carriere;
+    private int $dateCreation;
+    private Pays $country;
+    private array $carrieres;
 
-    public function __construct($name, $dateCreation, $country, $player)
+    public function __construct($name, $dateCreation, $country)
     {
         $this->name = $name;
         $this->dateCreation = $dateCreation;
         $this->country = $country;
-        $this->player = $player;
-        $this->carriere = [];
+        $this->carrieres = [];
     }
 
     public function getName()
@@ -47,16 +44,17 @@ class Equipe
 
     public function setCarriere($carriere)
     {
-        $this->carriere = $carriere;
+        $this->carrieres = $carriere;
     }
 
-    public function addCarriere($carriere)
+    public function addCarriere( Carriere $carriere)
     {
-        $this->carriere[] = $carriere;
+        echo "<p>" . $this->getName() . " " . $this->getDateCreation() . " " . $this->getCountry() . "</p>";
     }
 
     public function __toString()
     {
-        return $this->getName() . " " . date_format($this->getDateCreation(), 'd-m-Y') . " " . $this->getCountry();
+        return $this->getName() . " " . $this->getDateCreation() . " " . $this->getCountry();
     }
 }
+
